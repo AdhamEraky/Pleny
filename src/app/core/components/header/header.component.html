@@ -1,0 +1,54 @@
+<header class="header">
+  <div class="header-container container">
+    <div class="navbar">
+      <div class="header-logoWrapper">
+        <img
+          class="header-logo"
+          src="../../../../assets/images/Logomark.png"
+          alt=""
+        />
+        <strong>ClickTik</strong>
+      </div>
+
+      <!-- Hamburger Icon -->
+      <div class="hamburger-menu" (click)="toggleMenu()">
+        &#9776;
+        <!-- Unicode for the hamburger icon -->
+      </div>
+
+      <ul class="header-list" [ngClass]="{ active: isMenuActive }">
+        <li><a [routerLink]="['/']" (click)="onHomeClick()">Home</a></li>
+        <li>
+          <a [routerLink]="['/products']" (click)="onProductsClick()"
+            >Products</a
+          >
+        </li>
+      </ul>
+    </div>
+
+    <div class="anotherActions">
+      <div class="search-wrapper" *ngIf="isProductsPageActive">
+        <input
+          #searchInput2
+          class="searchInput"
+          type="text"
+          placeholder="Search"
+          (input)="onSearchInput(searchInput2.value)"
+        />
+        <i class="fas fa-search search-icon"></i>
+      </div>
+
+      <div class="cart-wrapper">
+        <i class="fa-sharp fa-solid fa-cart-shopping cartIcon"></i>
+        <span class="cart-counter" *ngIf="cartCount">{{ cartCount }}</span>
+      </div>
+      <div class="account-wrapper" (click)="toggleDropdown()">
+        <a href="javascript:void(0)" class="header-account">Account</a>
+        <div class="dropdown-menu" *ngIf="isDropdownVisible">
+          <a>Profile</a>
+          <a (click)="logout()">Logout</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>

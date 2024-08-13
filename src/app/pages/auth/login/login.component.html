@@ -1,0 +1,56 @@
+<div class="login-container">
+  <div class="login-title">
+    <img src="../../../../assets/images/Logomark.png" alt="" />
+    <h2>Log in to your account</h2>
+    <small>Welcome back! Please enter your details.</small>
+  </div>
+  <form [formGroup]="loginForm" (ngSubmit)="submit()">
+    <div>
+      <label for="username">Email</label>
+      <input
+        type="text"
+        id="username"
+        formControlName="username"
+        placeholder="Enter your email"
+      />
+      <div
+        *ngIf="
+          loginForm.get('username')?.invalid &&
+          loginForm.get('username')?.touched
+        "
+      >
+        <small
+          class="errorMessage"
+          *ngIf="loginForm.get('username')?.errors?.['required']"
+        >
+          Username is required.
+        </small>
+      </div>
+    </div>
+
+    <div>
+      <label for="password">Password</label>
+      <input
+        type="password"
+        id="password"
+        formControlName="password"
+        placeholder="Enter your password"
+      />
+      <div
+        *ngIf="
+          loginForm.get('password')?.invalid &&
+          loginForm.get('password')?.touched
+        "
+      >
+        <small
+          class="errorMessage"
+          *ngIf="loginForm.get('password')?.errors?.['required']"
+        >
+          Password is required.
+        </small>
+      </div>
+    </div>
+
+    <button type="submit" [disabled]="loginForm.invalid">Sign in</button>
+  </form>
+</div>

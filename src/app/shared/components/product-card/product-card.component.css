@@ -1,0 +1,143 @@
+/* .productCard {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  max-width: 250px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  font-family: Arial, sans-serif;
+  text-align: left;
+  overflow: hidden;
+  position: relative;
+  padding-bottom: 15px;
+} */
+
+.productCard {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  width: 100%; /* Make sure it takes full width of the container */
+  max-width: 250px; /* You can keep this if you want to limit width */
+  height: 650px; /* Set a fixed height */
+  background-color: #ffffff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  font-family: Arial, sans-serif;
+  text-align: left;
+  overflow: hidden;
+  position: relative;
+  padding: 15px; /* Adjust padding to ensure text fits well */
+}
+
+.discountTag {
+  background-color: #00c4cc;
+  color: white;
+  padding: 5px 15px;
+  border-radius: 10px;
+  font-size: 12px;
+  position: absolute;
+  top: 7px;
+  left: 18%;
+  transform: translateX(-50%);
+  z-index: 1;
+}
+
+.productImage {
+  width: 100%;
+  margin: 0;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  display: block;
+}
+
+.productName {
+  font-size: 18px;
+  font-weight: bold;
+  display: block;
+  margin: 15px 0 5px 0;
+  color: #333;
+  margin-left: 10px;
+}
+
+.productDescription {
+  font-size: 12px;
+  color: #888;
+  display: block;
+  margin-bottom: 10px;
+  margin-left: 10px;
+}
+
+.price {
+  font-size: 16px;
+  margin-bottom: 15px;
+  margin-left: 10px;
+}
+
+.originalPrice {
+  text-decoration: line-through;
+  color: #888;
+  margin-right: 5px;
+}
+
+.discountedPrice {
+  color: #333;
+  font-weight: bold;
+}
+
+.productDetails {
+  list-style-type: none;
+  padding: 0;
+  font-size: 12px;
+  margin-bottom: 15px;
+  color: #555;
+  margin-left: 10px;
+}
+
+.productDetails li {
+  margin-bottom: 5px;
+}
+
+.rating {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  font-size: 14px;
+  color: #333;
+  margin-bottom: 15px;
+  margin-right: 10px;
+}
+
+.starRating {
+  color: #f39c12;
+  font-size: 16px;
+  margin-right: 5px;
+}
+
+.reviews {
+  color: #888;
+}
+
+.buttonDiv {
+  position: absolute;
+  width: 90%;
+  bottom: 13px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+button {
+  position: relative;
+  background-color: #41cccc;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  width: 90%;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
+  bottom: 1;
+}
+
+button:hover {
+  background-color: #00a1a6;
+}

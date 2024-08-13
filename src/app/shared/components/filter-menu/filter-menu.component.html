@@ -1,0 +1,29 @@
+<div class="filterMenu">
+  <strong>Products</strong>
+
+  <ul>
+    <!-- "All" radio button to reset filter -->
+    <li>
+      <input
+        type="radio"
+        value="All"
+        name="category"
+        id="category-all"
+        (change)="onCategoryChange('All')"
+      />
+      <span>All</span>
+    </li>
+
+    <!-- Existing category radio buttons -->
+    <li *ngFor="let item of category">
+      <input
+        type="radio"
+        [value]="item"
+        name="category"
+        id="category-{{ item }}"
+        (change)="onCategoryChange(item)"
+      />
+      <span>{{ item | titlecase }}</span>
+    </li>
+  </ul>
+</div>

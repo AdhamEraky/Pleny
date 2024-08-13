@@ -1,0 +1,143 @@
+.grid-container {
+  display: grid;
+  grid-template-areas: "menu main main main";
+  gap: 10px;
+}
+
+.grid-container > div {
+  background-color: rgba(255, 255, 255, 0.8);
+  text-align: center;
+  padding: 20px 0;
+  font-size: 30px;
+}
+
+.breadcrumb {
+  font-size: 18px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+
+  a {
+    text-decoration: none;
+
+    &:hover {
+      cursor: pointer;
+      text-decoration: none;
+    }
+  }
+
+  span {
+    margin-left: 5px;
+    color: #555;
+  }
+}
+
+.product-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Creates 3 equal columns */
+  gap: 10px; /* Space between cards */
+  padding: 10px;
+}
+
+.d-flex {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.page-button {
+  background-color: #ffffff; /* Grey color */
+  color: #555; /* Darker text for contrast */
+  border: none;
+  padding: 5px 10px; /* Smaller padding */
+  margin: 0 3px; /* Smaller margin */
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 14px; /* Smaller font size */
+}
+
+.page-button:disabled {
+  background-color: #ffffff; /* Lighter grey for disabled */
+  cursor: not-allowed;
+}
+
+.page-button.active {
+  background-color: #41cccc; /* Darker grey for active page */
+  color: white; /* White text for active page */
+}
+
+.loader {
+  border: 8px solid rgba(255, 255, 255, 0.3); /* Light border */
+  border-top: 8px solid #3498db; /* Blue color for the top */
+  border-radius: 50%; /* Circular shape */
+  width: 50px; /* Loader size */
+  height: 50px; /* Loader size */
+  animation: spin 1s linear infinite; /* Spinning animation */
+  margin: 100px auto; /* Center the loader */
+}
+
+/* Keyframes for spinning animation */
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 768px) {
+  .grid-container {
+    grid-template-areas:
+      "menu"
+      "main";
+  }
+
+  .product-list {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns on mobile */
+    gap: 10px; /* Keep the gap between cards */
+    padding: 5px; /* Adjust padding if needed */
+  }
+
+  .pagination {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .page-button {
+    margin: 5px 0; /* Increase margin for better spacing on mobile */
+    font-size: 16px; /* Adjust font size for mobile readability */
+  }
+
+  .d-flex {
+    flex-direction: column; /* Stack items vertically on mobile */
+    align-items: center;
+  }
+
+  .grid-container > div {
+    font-size: 24px; /* Adjust font size for smaller screens */
+    padding: 10px 0; /* Reduce padding */
+  }
+
+  .product-list {
+    padding: 5px; /* Less padding for product list */
+  }
+
+  .pagination {
+    margin-top: 10px; /* Less margin above pagination */
+  }
+
+  .loader {
+    width: 40px; /* Smaller loader for mobile */
+    height: 40px;
+  }
+
+  .some-element {
+    display: none; /* Example of hiding an element on mobile */
+  }
+}

@@ -1,0 +1,37 @@
+<div class="productCard">
+  <div class="discountTag">-{{ product?.discountPercentage }}%</div>
+  <img [src]="product?.thumbnail" alt="iPhone 9" class="productImage" />
+  <strong class="productName">{{ product?.title | titlecase }}</strong>
+  <small class="productDescription">{{ product?.description }}</small>
+  <div class="price">
+    <span class="originalPrice">{{ product?.price }} USD</span>
+    <span class="discountedPrice">
+      {{
+        (
+          product?.price -
+          product?.price * (product?.discountPercentage / 100)
+        ).toFixed(2)
+      }}
+      USD
+    </span>
+  </div>
+  <ul class="productDetails">
+    <li>
+      Brand: <strong>{{ product?.brand | titlecase }}</strong>
+    </li>
+    <li>
+      Category: <strong>{{ product?.category | titlecase }}</strong>
+    </li>
+    <li>
+      In stock: <strong>{{ product?.stock }}</strong>
+    </li>
+  </ul>
+  <div class="rating">
+    <span class="starRating">⭐ {{ product?.rating }}</span>
+    <span class="reviews">({{ product.reviews.length }})</span>
+  </div>
+
+  <div class="buttonDiv">
+    <button (click)="addToCart()">ADD TO CART</button>
+  </div>
+</div>

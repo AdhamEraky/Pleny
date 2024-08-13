@@ -1,0 +1,58 @@
+<div class="container">
+  <div class="breadcrumb">
+    <a (click)="resetCategory()">Products</a>
+    <span *ngIf="selectedCategory">
+      / <strong>{{ selectedCategory | titlecase }}</strong></span
+    >
+  </div>
+
+  <div class="grid-container">
+    <div class="item2">
+      <app-filter-menu
+        [category]="categories"
+        (categorySelected)="onCategorySelected($event)"
+      ></app-filter-menu>
+    </div>
+
+    <div class="item3">
+      <div class="product-list">
+        <app-product-card
+          *ngFor="let product of products"
+          [product]="product"
+        ></app-product-card>
+
+        <div class="loader" *ngIf="loading"></div>
+      </div>
+
+      <!-- Pagination controls -->
+      <div class="pagination">
+        <button
+          (click)="changePage(currentPage - 1)"
+          [disabled]="currentPage <= 1"
+          class="page-button"
+        >
+          &laquo;
+          <!-- Previous arrow -->
+        </button>
+
+        <button
+          *ngFor="let page of visiblePages"
+          (click)="changePage(page)"
+          [class.active]="page === currentPage"
+          class="page-button"
+        >
+          {{ page }}
+        </button>
+
+        <button
+          (click)="changePage(currentPage + 1)"
+          [disabled]="currentPage >= totalPages"
+          class="page-button"
+        >
+          &raquo;
+          <!-- Next arrow -->
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
